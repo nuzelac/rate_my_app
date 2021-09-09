@@ -11,8 +11,8 @@ dependencies:
   shared_preferences:
     git:
       url: git@github.com:nuzelac/plugins.git
-      path: packages/shared_preferences
-      ref: shared_preferences_prefix  
+      path: packages/shared_preferences/shared_preferences
+      ref: shared_preferences_prefix_update
   smooth_star_rating: ^1.1.1
   pedantic: '>=1.8.0 <2.0.0'
   flutter:
