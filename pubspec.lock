@@ -114,7 +114,7 @@ packages:
     description:
       path: "packages/shared_preferences/shared_preferences"
       ref: shared_preferences_prefix_update
-      resolved-ref: "3a747ce47ce1e05d8ed17c76bf96e3bec0a87d19"
+      resolved-ref: "2fbe929ef435117f0e1171bdbacafe9f2147866a"
       url: "git@github.com:nuzelac/plugins.git"
     source: git
     version: "2.0.7"
