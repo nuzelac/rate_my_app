@@ -264,7 +264,7 @@ abstract class _RateMyAppDialogButton extends StatelessWidget {
   }) : assert(text != null);
 
   @override
-  Widget build(BuildContext context) => FlatButton(
+  Widget build(BuildContext context) => TextButton(
         child: Text(text),
         onPressed: () async {
           if (validator != null && !validator()) {
