@@ -1,4 +1,4 @@
-package fr.skyost.rate_my_app
+package fr.skyost.ratemyapp
 
 import android.app.Activity
 import android.content.Context
@@ -17,11 +17,10 @@ import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
-import io.flutter.plugin.common.PluginRegistry.Registrar
 
 /**
  * The Rate my app plugin main class.
- * A lot of thanks to https://github.com/britannio/in_app_review and its author (This class is a lot inspired by it).
+ * A lot of thanks to https://github.com/britannio/in_app_review and its author (This class has been inspired by his work).
  */
 public class RateMyAppPlugin : FlutterPlugin, MethodCallHandler, ActivityAware {
     private var activity: Activity? = null

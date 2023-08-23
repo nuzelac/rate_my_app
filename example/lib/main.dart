@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rate_my_app/rate_my_app.dart';
-import 'package:rate_my_app_example/content.dart';
+
+import 'content.dart';
 
 /// First plugin test method.
 void main() {

@@ -26,6 +26,7 @@ On iOS, if you want to target a version before _10.3_, add this in your `Info.pl
 ```
 
 By the way, it's important to note that your bundle identifier (in your `Info.plist`) must match the App ID on iTunes Connect and the package identifier (in your `build.gradle`) must match your App ID on Google Play.
+Oh, and your project [must use Swift](https://github.com/Skyost/RateMyApp/issues/90).
 
 If for any reason it doesn't match please go to the _[Using custom identifiers](#using-custom-identifiers)_ section.
 
@@ -100,13 +101,13 @@ rateMyApp.init().then((_) {
         return true; // Return false if you want to cancel the click event.
       },
       ignoreNativeDialog: Platform.isAndroid, // Set to false if you want to show the Apple's native app rating dialog on iOS or Google's native app rating dialog (depends on the current Platform).
-      dialogStyle: DialogStyle(), // Custom dialog styles.
+      dialogStyle: const DialogStyle(), // Custom dialog styles.
       onDismissed: () => rateMyApp.callEvent(RateMyAppEventType.laterButtonPressed), // Called when the user dismissed the dialog (either by taping outside or by pressing the "back" button).
       // contentBuilder: (context, defaultContent) => content, // This one allows you to change the default dialog content.
       // actionsBuilder: (context) => [], // This one allows you to use your own buttons. 
     );
     
-    // Or if you prefer to show a star rating bar :
+    // Or if you prefer to show a star rating bar (powered by `flutter_rating_bar`) :
     
     rateMyApp.showStarRateDialog(
       context,
@@ -128,12 +129,12 @@ rateMyApp.init().then((_) {
         ];
       },
       ignoreNativeDialog: Platform.isAndroid, // Set to false if you want to show the Apple's native app rating dialog on iOS or Google's native app rating dialog (depends on the current Platform).
-      dialogStyle: DialogStyle( // Custom dialog styles.
+      dialogStyle: const DialogStyle( // Custom dialog styles.
         titleAlign: TextAlign.center,
         messageAlign: TextAlign.center,
         messagePadding: EdgeInsets.only(bottom: 20),
       ),
-      starRatingOptions: StarRatingOptions(), // Custom star bar rating options.
+      starRatingOptions: const StarRatingOptions(), // Custom star bar rating options.
       onDismissed: () => rateMyApp.callEvent(RateMyAppEventType.laterButtonPressed), // Called when the user dismissed the dialog (either by taping outside or by pressing the "back" button).
     );
   }
@@ -258,11 +259,11 @@ You have a lot of options to contribute to this project ! You can :
 * [Fork it](https://github.com/Skyost/RateMyApp/fork) on Github.
 * [Submit](https://github.com/Skyost/RateMyApp/issues/new/choose) a feature request or a bug report.
 * [Donate](https://paypal.me/Skyost) to the developer.
-* [Watch a little ad](https://www.clipeee.com/creator/skyost) on Clipeee.
 
 ## Dependencies
 
 This library depends on some other libraries :
 
 * [shared_preferences](https://pub.dev/packages/shared_preferences)
-* [smooth_star_rating](https://pub.dev/packages/smooth_star_rating)
+* [flutter_rating_bar](https://pub.dev/packages/flutter_rating_bar)
+* [pedantic](https://pub.dev/packages/pedantic)

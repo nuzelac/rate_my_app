@@ -1,3 +1,38 @@
+## 2.0.0
+* Added support of namespace property to support Android Gradle Plugin (AGP) 8. Projects with AGP < 4.2 are not supported anymore. It is highly recommended to update at least to AGP 7.0 or newer.
+
+## 1.1.4
+* Migrated from `PlayCore` to  `PlayReview`.
+
+## 1.1.3
+* Various updates for Flutter 3 (thanks [daadu](https://github.com/daadu) and [lohanbodevan](https://github.com/lohanbodevan)).
+
+## 1.1.2
+* Upgraded Kotlin version to 1.6.10.
+
+## 1.1.1+1
+* Switched from `pedantic` to `flutter_lints`.
+
+## 1.1.1
+* Added support for dialogs transitions (thanks [Sadeesha-Sath](https://github.com/Sadeesha-Sath)).
+* Added custom item and item color customization for rate dialogs (thanks [Sadeesha-Sath](https://github.com/Sadeesha-Sath)). 
+
+## 1.1.0+1
+* Fixed bugs with some `invokeMethod` calls.
+
+## 1.1.0
+* Added support for `flutter_rating_bar`.
+
+## 1.0.0+2
+* Fixed some problems with the Dart analyzer.
+
+## 1.0.0+1
+* Fixed some problems with the `pubspec.yaml` file.
+
+## 1.0.0
+* Null safety migration.
+* Updated for Flutter v2.0.0.
+
 ## 0.7.2
 
 * Changed how the plugin handles store openings.

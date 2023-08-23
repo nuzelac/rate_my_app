@@ -12,17 +12,16 @@ class MaxDialogOpeningCondition extends DebuggableCondition {
   final int maxStarDialogOpeningCount;
 
   /// Current dialog opening count.
-  int dialogOpeningCount;
+  late int dialogOpeningCount;
 
   /// Current star dialog opening count.
-  int starDialogOpeningCount;
+  late int starDialogOpeningCount;
 
   /// Creates a new max dialog opening condition instance.
   MaxDialogOpeningCondition({
     this.maxDialogOpeningCount = 3,
     this.maxStarDialogOpeningCount = 3,
-  })  : assert(maxDialogOpeningCount != null),
-        assert(maxStarDialogOpeningCount != null);
+  });
 
   @override
   void readFromPreferences(SharedPreferences preferences, String preferencesPrefix) {
@@ -35,7 +34,7 @@ class MaxDialogOpeningCondition extends DebuggableCondition {
   Future<void> saveToPreferences(SharedPreferences preferences, String preferencesPrefix) async {
     // Here we save our current values.
     await preferences.setInt(preferencesPrefix + 'dialogOpeningCount', dialogOpeningCount);
-    return preferences.setInt(preferencesPrefix + 'starDialogOpeningCount', starDialogOpeningCount);
+    await preferences.setInt(preferencesPrefix + 'starDialogOpeningCount', starDialogOpeningCount);
   }
 
   @override
@@ -65,7 +64,14 @@ class MaxDialogOpeningCondition extends DebuggableCondition {
   @override
   String get valuesAsString {
     // Allows to easily debug this condition.
-    return 'Dialog opening count : ' + dialogOpeningCount.toString() + '\nMax dialog opening count : ' + maxDialogOpeningCount.toString() + 'Star dialog opening count : ' + starDialogOpeningCount.toString() + '\nMax star dialog opening count : ' + maxStarDialogOpeningCount.toString();
+    return 'Dialog opening count : ' +
+        dialogOpeningCount.toString() +
+        '\nMax dialog opening count : ' +
+        maxDialogOpeningCount.toString() +
+        'Star dialog opening count : ' +
+        starDialogOpeningCount.toString() +
+        '\nMax star dialog opening count : ' +
+        maxStarDialogOpeningCount.toString();
   }
 
   @override

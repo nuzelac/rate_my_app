@@ -1,28 +1,26 @@
 name: rate_my_app
 description: Allows to kindly ask users to rate your app if custom conditions are met (eg. install time, number of launches, etc...).
-version: 0.7.2 # Remember to also change the version in "ios/bonsoir.podspec", "macos/bonsoir.podspec", and "android/build.gradle".
+version: 2.0.0 # Remember to also change the version in "ios/rate_my_app.podspec" and "android/build.gradle".
 homepage: https://github.com/Skyost/RateMyApp
 
 environment:
-  sdk: ">=2.6.0 <3.0.0"
-  flutter: ">=1.12.0 <2.0.0"
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: ">=3.0.0"
 
 dependencies:
-  shared_preferences:
-    git:
-      url: git@github.com:nuzelac/plugins.git
-      path: packages/shared_preferences/shared_preferences
-      ref: shared_preferences_prefix_update
-  smooth_star_rating: ^1.1.1
-  pedantic: '>=1.8.0 <2.0.0'
+  shared_preferences: '>=2.0.0 <3.0.0'
+  flutter_rating_bar: '>=4.0.0 <5.0.0'
   flutter:
     sdk: flutter
+
+dev_dependencies:
+  flutter_lints: ^2.0.1
 
 flutter:
   plugin:
     platforms:
       android:
-        package: fr.skyost.rate_my_app
+        package: fr.skyost.ratemyapp
         pluginClass: RateMyAppPlugin
       ios:
         pluginClass: RateMyAppPlugin
