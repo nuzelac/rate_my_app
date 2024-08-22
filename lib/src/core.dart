@@ -53,6 +53,7 @@ class RateMyApp {
 
   /// Initializes the plugin (loads base launch date, app launches and whether the dialog should not be opened again).
   Future<void> init() async {
+    SharedPreferences.setPrefix('');
     SharedPreferences preferences = await SharedPreferences.getInstance();
     for (Condition condition in conditions) {
       if (condition is SharedPreferencesCondition) {
@@ -64,6 +65,7 @@ class RateMyApp {
 
   /// Saves the plugin current data to the shared preferences.
   Future<void> save() async {
+    SharedPreferences.setPrefix('');
     SharedPreferences preferences = await SharedPreferences.getInstance();
     for (Condition condition in conditions) {
       if (condition is SharedPreferencesCondition) {
