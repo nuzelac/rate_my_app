@@ -1,10 +1,21 @@
-import Flutter
+#if canImport(Flutter)
+    import Flutter
+#elseif canImport(FlutterMacOS)
+    import FlutterMacOS
+#endif
 import StoreKit
-import UIKit
+#if canImport(UIKit)
+    import UIKit
+#endif
 
 public class SwiftRateMyAppPlugin: NSObject, FlutterPlugin {
     public static func register(with registrar: FlutterPluginRegistrar) {
-        let channel = FlutterMethodChannel(name: "rate_my_app", binaryMessenger: registrar.messenger())
+        #if canImport(Flutter)
+            let messenger = registrar.messenger()
+        #elseif canImport(FlutterMacOS)
+            let messenger = registrar.messenger
+        #endif
+        let channel = FlutterMethodChannel(name: "rate_my_app", binaryMessenger: messenger)
         let instance = SwiftRateMyAppPlugin()
         registrar.addMethodCallDelegate(instance, channel: channel)
     }
@@ -13,52 +24,39 @@ public class SwiftRateMyAppPlugin: NSObject, FlutterPlugin {
         let arguments: [String: Any?] = (call.arguments ?? [:]) as! [String: Any?]
         switch call.method {
         case "launchNativeReviewDialog":
-            if #available(iOS 10.3, *) {
-                SKStoreReviewController.requestReview()
-                result(true)
-            } else {
-                result(false)
-            }
+            SKStoreReviewController.requestReview()
+            result(true)
         case "isNativeDialogSupported":
-            if #available(iOS 10.3, *) {
-                result(true)
-            } else {
-                result(false)
-            }
+            result(true)
         case "launchStore":
-            let appId: String? = arguments["appId"] as! String?
+            let appId: String? = arguments["appId"] == nil ? nil : arguments["appId"] as! String?
             if appId == nil || appId!.isEmpty {
                 result(2)
                 return
             }
 
-            if openURL(link: "itms-apps://itunes.apple.com/app/id\(appId!)?action=write-review") {
+            if openUrl(link: "itms-apps://itunes.apple.com/app/id\(appId!)?action=write-review") {
                 result(0)
             } else {
-                result(openURL(link: "https://itunes.apple.com/app/id\(appId!)") ? 1 : 2)
+                result(openUrl(link: "https://itunes.apple.com/app/id\(appId!)") ? 1 : 2)
             }
         default:
             result(FlutterMethodNotImplemented)
         }
     }
 
-    private func openURL(link: String) -> Bool {
+    private func openUrl(link: String) -> Bool {
         guard let url = URL(string: link) else {
             return false
         }
-
-        if #available(iOS 10.0, *) {
+        #if canImport(UIKit)
             if UIApplication.shared.canOpenURL(url) {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
                 return true
             }
             return false
-        } else {
-            if UIApplication.shared.canOpenURL(url) {
-                UIApplication.shared.openURL(url)
-                return true
-            }
-            return false
-        }
+        #else
+            return NSWorkspace.shared.open(url)
+        #endif
     }
 }
