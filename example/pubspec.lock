@@ -13,10 +13,10 @@ packages:
     dependency: transitive
     description:
       name: collection
-      sha256: f092b211a4319e98e5ff58223576de6c2803db36221657b46c82574721240687
+      sha256: ee67cb0715911d28db6bf4af1026078bd6f0128b07a5f66fb2ed94ec6783c09a
       url: "https://pub.dev"
     source: hosted
-    version: "1.17.2"
+    version: "1.18.0"
   ffi:
     dependency: transitive
     description:
@@ -55,18 +55,18 @@ packages:
     dependency: transitive
     description:
       name: material_color_utilities
-      sha256: "9528f2f296073ff54cb9fee677df673ace1218163c3bc7628093e7eed5203d41"
+      sha256: f7142bb1154231d7ea5f96bc7bde4bda2a0945d2806bb11670e30b850d56bdec
       url: "https://pub.dev"
     source: hosted
-    version: "0.5.0"
+    version: "0.11.1"
   meta:
     dependency: transitive
     description:
       name: meta
-      sha256: "3c74dbf8763d36539f114c799d8a2d87343b5067e9d796ca22b5eb8437090ee3"
+      sha256: bdb68674043280c3428e9ec998512fb681678676b3c54e773629ffe74419f8c7
       url: "https://pub.dev"
     source: hosted
-    version: "1.9.1"
+    version: "1.15.0"
   path:
     dependency: transitive
     description:
@@ -111,10 +111,10 @@ packages:
     dependency: transitive
     description:
       name: plugin_platform_interface
-      sha256: "43798d895c929056255600343db8f049921cbec94d31ec87f1dc5c16c01935dd"
+      sha256: "4820fbfdb9478b1ebae27888254d445073732dae3d6ea81f0b7e06d5dedc3f02"
       url: "https://pub.dev"
     source: hosted
-    version: "2.1.5"
+    version: "2.1.8"
   rate_my_app:
     dependency: "direct main"
     description:
@@ -125,57 +125,59 @@ packages:
   shared_preferences:
     dependency: transitive
     description:
-      path: "packages/shared_preferences/shared_preferences"
-      ref: shared_preferences_prefix_update
-      resolved-ref: "88b4d5e8a1da55f987313dfc26ba31f269bd9d60"
-      url: "git@github.com:nuzelac/plugins.git"
-    source: git
-    version: "2.0.7"
+      name: shared_preferences
+      sha256: "746e5369a43170c25816cc472ee016d3a66bc13fcf430c0bc41ad7b4b2922051"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.3.2"
+  shared_preferences_android:
+    dependency: transitive
+    description:
+      name: shared_preferences_android
+      sha256: a7e8467e9181cef109f601e3f65765685786c1a738a83d7fbbde377589c0d974
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.3.1"
+  shared_preferences_foundation:
+    dependency: transitive
+    description:
+      name: shared_preferences_foundation
+      sha256: c4b35f6cb8f63c147312c054ce7c2254c8066745125264f0c88739c417fc9d9f
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.5.2"
   shared_preferences_linux:
     dependency: transitive
     description:
-      path: "packages/shared_preferences/shared_preferences_linux"
-      ref: shared_preferences_prefix_update
-      resolved-ref: "88b4d5e8a1da55f987313dfc26ba31f269bd9d60"
-      url: "git@github.com:nuzelac/plugins.git"
-    source: git
-    version: "2.0.2"
-  shared_preferences_macos:
-    dependency: transitive
-    description:
-      path: "packages/shared_preferences/shared_preferences_macos"
-      ref: shared_preferences_prefix_update
-      resolved-ref: "88b4d5e8a1da55f987313dfc26ba31f269bd9d60"
-      url: "git@github.com:nuzelac/plugins.git"
-    source: git
-    version: "2.0.2"
+      name: shared_preferences_linux
+      sha256: "580abfd40f415611503cae30adf626e6656dfb2f0cee8f465ece7b6defb40f2f"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.4.1"
   shared_preferences_platform_interface:
     dependency: transitive
     description:
-      path: "packages/shared_preferences/shared_preferences_platform_interface"
-      ref: shared_preferences_prefix_update
-      resolved-ref: "88b4d5e8a1da55f987313dfc26ba31f269bd9d60"
-      url: "git@github.com:nuzelac/plugins.git"
-    source: git
-    version: "2.0.0"
+      name: shared_preferences_platform_interface
+      sha256: "57cbf196c486bc2cf1f02b85784932c6094376284b3ad5779d1b1c6c6a816b80"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.4.1"
   shared_preferences_web:
     dependency: transitive
     description:
-      path: "packages/shared_preferences/shared_preferences_web"
-      ref: shared_preferences_prefix_update
-      resolved-ref: "88b4d5e8a1da55f987313dfc26ba31f269bd9d60"
-      url: "git@github.com:nuzelac/plugins.git"
-    source: git
-    version: "2.0.2"
+      name: shared_preferences_web
+      sha256: d2ca4132d3946fec2184261726b355836a82c33d7d5b67af32692aff18a4684e
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.4.2"
   shared_preferences_windows:
     dependency: transitive
     description:
-      path: "packages/shared_preferences/shared_preferences_windows"
-      ref: shared_preferences_prefix_update
-      resolved-ref: "88b4d5e8a1da55f987313dfc26ba31f269bd9d60"
-      url: "git@github.com:nuzelac/plugins.git"
-    source: git
-    version: "2.0.2"
+      name: shared_preferences_windows
+      sha256: "94ef0f72b2d71bc3e700e025db3710911bd51a71cefb65cc609dd0d9a982e3c1"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.4.1"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -193,10 +195,10 @@ packages:
     dependency: transitive
     description:
       name: web
-      sha256: dc8ccd225a2005c1be616fe02951e2e342092edf968cf0844220383757ef8f10
+      sha256: d43c1d6b787bf0afad444700ae7f4db8827f701bc61c255ac8d328c6f4d52062
       url: "https://pub.dev"
     source: hosted
-    version: "0.1.4-beta"
+    version: "1.0.0"
   win32:
     dependency: transitive
     description:
@@ -214,5 +216,5 @@ packages:
     source: hosted
     version: "1.0.2"
 sdks:
-  dart: ">=3.1.0-185.0.dev <4.0.0"
-  flutter: ">=3.3.0"
+  dart: ">=3.4.0 <4.0.0"
+  flutter: ">=3.22.0"

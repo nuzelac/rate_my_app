@@ -8,11 +8,7 @@ environment:
   flutter: ">=3.0.0"
 
 dependencies:
-  shared_preferences:
-    git:
-      url: git@github.com:nuzelac/plugins.git
-      path: packages/shared_preferences/shared_preferences
-      ref: shared_preferences_prefix_update
+  shared_preferences: ^2.3.2
   flutter_rating_bar: '>=4.0.0 <5.0.0'
   flutter:
     sdk: flutter
